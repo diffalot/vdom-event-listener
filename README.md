@@ -17,7 +17,7 @@ function render () {
   return h('input', {
     className: 'i-has-class',
     type: 'text',
-    value: value,
+    value: 'initial value',
     listeningHook: new EventListener(update)
   })
 }
