@@ -1,0 +1,27 @@
+{
+  "name": "vdom-event-listener",
+  "version": "0.0.0",
+  "description": "a virtual-dom hook that lets you add eventListeners on dom nodes",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diffalot/vdom-event-listener.git"
+  },
+  "keywords": [
+    "virtual-dom",
+    "hook",
+    "event",
+    "event",
+    "listener",
+    "eventListener"
+  ],
+  "author": "Andrew Davis <diffalot@diff.mx>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diffalot/vdom-event-listener/issues"
+  },
+  "homepage": "https://github.com/diffalot/vdom-event-listener#readme"
+}
