@@ -1,8 +1,9 @@
 language: node_js
 node_js:
-  - "6"
-  - "5"
-  - "4"
-  - "0.12"
-  - "0.11"
-  - "0.10"
+- '6'
+addons:
+  sauce_connect:
+    username: diffalot
+    access_key:
+      secure: bQk5OaFB1VdbArLy0R1WF8pcm2y2DQdatSlHeeh2D/D2Vvdn3l2BA1Lwlme1hqkZU2eE0VGXdx9eTma/BfFmLrvqbagQXSJdsPC1nwXkuX87XzKcu4WZ+nkni1THFMEiZEXgsh+l8D09oaV0MvgAyhbfFXe/Wtj4YYdgcJ9e34ApTAlxy3DUyka6HFElixw2VlS4e0O+olFXRXWeP6KAiH9UUJwBlqZ3SX/dV5UjB5mbqYb3xHFKqHp8lKGty6WmKU7OTjLpK5DpmLaF0x1sCZ1Dc8//9/t8zniVSfMKW4esgQ6P+TX9lHsVBSfxULUFyNgEdzMFBdYF+cHbOVilbT9MVVGMpuTJqPk80Jn/0TFf2bO0HUId6mo18fIJracCzI3nVn0VKO5tUY06LJuMXCOLtvGnOCAl9D/kJhddnl+nsS8/A80i0A++jCOUgNxm8apIHqZxmZ3vPh/4XGslmrr1ge+AVwAn78flbvbPr1yf/9tl889/icQ2pI5KRejTbgso+j4bX2+kZxbWzIt6msgCb24pZ8R81GTK+oH8FGJF/wMFNwRZjd1bbdwiD3tXVzjawuuJkSJxWfKFZVjE8t+/qdl6b0w57GITDbNl0hlorc2NucIdSEpQ09/vZU6B7ay73JGgMgAfoq9B599sMqqzxemriYwroA/iRdpI9IM=
+>>>>>>> 4359850... add saucelabs connector to travis
