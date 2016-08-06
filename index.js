@@ -1,14 +1,14 @@
 'use strict'
 
-var InputChange = function (fn, listener) {
+var EventListener = function (fn, listener) {
   this.fn = fn
   this.listener = listener || 'input'
 }
-InputChange.prototype.hook = function (node, propertyName, previousValue) {
+EventListener.prototype.hook = function (node, propertyName, previousValue) {
   this.inputChange = node.addEventListener(this.listener, this.fn)
 }
-InputChange.prototype.unhook = function (node, propertyName, previousValue) {
+EventListener.prototype.unhook = function (node, propertyName, previousValue) {
   node.removeEventListener(this.listener, this.inputChange)
 }
 
-module.exports = InputChange
+module.exports = EventListener

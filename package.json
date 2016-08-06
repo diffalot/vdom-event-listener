@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint"
+    "test": "npm run lint && zuul -- test"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,11 @@
   },
   "homepage": "https://github.com/diffalot/vdom-event-listener#readme",
   "devDependencies": {
-    "standard": "^7.1.2"
-  }
+    "simulate-event": "^1.4.0",
+    "standard": "^7.1.2",
+    "tape": "^4.6.0",
+    "virtual-dom": "^2.1.1",
+    "zuul": "^3.10.3"
+  },
+  "dependencies": {}
 }
