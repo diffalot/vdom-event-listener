@@ -1,3 +1,5 @@
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/diffalot.svg)](https://saucelabs.com/u/diffalot)
+
 # vdom-event-listener
 
 A virtual-dom hook that adds eventListeners on dom nodes
