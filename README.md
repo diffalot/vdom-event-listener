@@ -1,4 +1,3 @@
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/diffalot.svg)](https://saucelabs.com/u/diffalot)
 
 # vdom-event-listener
 
@@ -34,3 +33,7 @@ new EventListener(callbackFunction, eventName)
 callbackFunction = callback(event)
 
 eventName = defaults to `'input'`, but for input types like `'checkbox'` it is better to use `'change'`
+
+# Browser Compatibility
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/diffalot.svg)](https://saucelabs.com/u/diffalot)
