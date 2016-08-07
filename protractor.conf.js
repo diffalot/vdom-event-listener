@@ -42,14 +42,10 @@ if (process.env.TRAVIS) {
     browsers[i].build = process.env.TRAVIS_BUILD_NUMBER
     browsers[i].shardTestFiles = true
 
-    delete browsers[i].deviceName
-    delete browsers[i].platform
+    // delete browsers[i].deviceName
+    // delete browsers[i].platform
 
     browsers[i].browserName = browsers[i].browserName.toLowerCase()
-
-    if (browsers[i].browserName === 'internet explorer') {
-      browsers[i].browserName = 'ie'
-    }
 
     browsers[i].name = browsers[i].browserName.toLowerCase() + '-tests'
   }
