@@ -51,9 +51,7 @@ if (process.env.TRAVIS) {
     browsers[i].name = browsers[i].browserName.toLowerCase() + '-tests'
   }
 
-  console.log('testing on browsers', browsers)
-
-  config.multiCapabilities = browsers.filter(function (browser) {
+  browsers = browsers.filter(function (browser) {
     var deny = [
     ]
     if (deny.indexOf(browser.name) > -1) {
@@ -62,6 +60,10 @@ if (process.env.TRAVIS) {
       return false
     }
   })
+
+  console.log('testing on browsers', browsers)
+
+  config.multiCapabilities = browsers
 
   config.onComplete = function () {
     browser.getSession().then(function (session) {
