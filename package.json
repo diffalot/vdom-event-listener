@@ -4,6 +4,8 @@
   "description": "a virtual-dom hook that adds eventListeners on dom nodes",
   "main": "index.js",
   "scripts": {
+    "e2e-server": "beefy test/e2e-app.js",
+    "selenium-server": "webdriver-manager update && webdriver-manager start",
     "lint": "standard",
     "test": "npm run lint && zuul -- test"
   },
@@ -26,12 +28,29 @@
   },
   "homepage": "https://github.com/diffalot/vdom-event-listener#readme",
   "devDependencies": {
+    "beefy": "^2.1.8",
     "core-js": "^2.4.1",
+    "jasmine-spec-reporter": "^2.5.0",
+    "main-loop": "^3.4.0",
+    "protractor": "^4.0.2",
+    "redux": "^3.5.2",
     "standard": "^7.1.2",
     "synthetic-dom-events": "^0.3.0",
     "tape": "^4.6.0",
     "virtual-dom": "^2.1.1",
     "zuul": "^3.10.3"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "standard": {
+    "parser": "babel-eslint",
+    "globals": [
+      "browser",
+      "jasmine",
+      "by",
+      "describe",
+      "it",
+      "expect"
+    ],
+    "ignore": []
+  }
 }
