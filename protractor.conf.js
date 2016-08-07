@@ -33,9 +33,9 @@ if (process.env.TRAVIS) {
 
   delete config.capabilities
 
-  var browsers = require('browserslist-saucelabs')([{
-    browsers: '>1%, Last 2 Versions, IE >= 8'
-  }])
+  var browsers = require('browserslist-saucelabs')({
+    browsers: ['>1%', 'Last 2 Versions', 'IE >= 8']
+  })
 
   for (var i = 0; i < browsers.length; ++i) {
     browsers[i]['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER
@@ -49,16 +49,6 @@ if (process.env.TRAVIS) {
 
     browsers[i].name = browsers[i].browserName.toLowerCase() + '-tests'
   }
-
-  browsers = browsers.filter(function (browser) {
-    var deny = [
-    ]
-    if (deny.indexOf(browser.name) > -1) {
-      return false
-    } else {
-      return true
-    }
-  })
 
   console.log(browsers)
 
