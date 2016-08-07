@@ -1,6 +1,6 @@
 {
   "name": "vdom-event-listener",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a virtual-dom hook that adds eventListeners on dom nodes",
   "main": "index.js",
   "scripts": {
