@@ -42,7 +42,9 @@ if (process.env.TRAVIS) {
     browsers[i].build = process.env.TRAVIS_BUILD_NUMBER
     browsers[i].shardTestFiles = true
 
-    browsers[i].device = browsers[i].deviceName
+    delete browsers[i].deviceName
+    delete browsers[i].platform
+
     browsers[i].browserName = browsers[i].browserName.toLowerCase()
 
     if (browsers[i].browserName === 'internet explorer') {
@@ -61,6 +63,8 @@ if (process.env.TRAVIS) {
       return true
     }
   })
+
+  console.log(browsers)
 
   config.multiCapabilities = browsers
 
