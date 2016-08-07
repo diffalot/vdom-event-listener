@@ -33,17 +33,27 @@ if (process.env.TRAVIS) {
 
   delete config.capabilities
 
-  config.multiCapabilities = [{
-    browserName: 'firefox',
-    name: 'firefox-tests',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }, {
-    browserName: 'chrome',
-    name: 'chrome-tests',
-    'tunnel-identifier': process.env.TRAVIS_JOB_NUMBER,
-    build: process.env.TRAVIS_BUILD_NUMBER
-  }]
+  var browsers = require('browserslist-saucelabs')([{
+    browsers: '>1%, Last 2 Versions, IE >= 8'
+  }])
+
+  for (var i = 0; i < browsers.length; ++i) {
+    browsers[i]['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER
+    browsers[i].build = process.env.TRAVIS_BUILD_NUMBER
+    browsers[i].name = browsers[i].browserName + '-tests'
+  }
+
+  console.log('testing on browsers', browsers)
+
+  config.multiCapabilities = browsers.filter(function (browser) {
+    var deny = [
+    ]
+    if (deny.indexOf(browser.name) > -1) {
+      return true
+    } else {
+      return false
+    }
+  })
 
   config.onComplete = function () {
     browser.getSession().then(function (session) {

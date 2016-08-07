@@ -32,6 +32,7 @@
   "devDependencies": {
     "babel-eslint": "^6.1.2",
     "beefy": "^2.1.8",
+    "browserslist-saucelabs": "^0.3.0",
     "core-js": "^2.4.1",
     "jasmine-spec-reporter": "^2.5.0",
     "main-loop": "^3.4.0",
