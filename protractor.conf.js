@@ -40,8 +40,15 @@ if (process.env.TRAVIS) {
   for (var i = 0; i < browsers.length; ++i) {
     browsers[i]['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER
     browsers[i].build = process.env.TRAVIS_BUILD_NUMBER
+    browsers[i].shardTestFiles = true
+
     browsers[i].browserName = browsers[i].browserName.toLowerCase()
-    browsers[i].name = browsers[i].browserName.toLowerCase + '-tests'
+
+    if (browsers[i].browserName === 'internet explorer') {
+      browsers[i].browserName = 'ie'
+    }
+
+    browsers[i].name = browsers[i].browserName.toLowerCase() + '-tests'
   }
 
   console.log('testing on browsers', browsers)
