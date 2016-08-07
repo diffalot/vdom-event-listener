@@ -34,6 +34,7 @@
     "beefy": "^2.1.8",
     "browserslist-saucelabs": "^0.3.0",
     "core-js": "^2.4.1",
+    "https-proxy-agent": "^1.0.0",
     "jasmine-spec-reporter": "^2.5.0",
     "main-loop": "^3.4.0",
     "protractor": "^4.0.2",

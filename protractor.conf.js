@@ -26,6 +26,9 @@ var config = {
 }
 
 if (process.env.TRAVIS) {
+  var HttpsProxyAgent = require('https-proxy-agent')
+  config.sauceAgent = new HttpsProxyAgent('http://localhost:9966')
+
   config.sauceUser = process.env.SAUCE_USERNAME
   config.sauceKey = process.env.SAUCE_ACCESS_KEY
 
@@ -33,9 +36,10 @@ if (process.env.TRAVIS) {
 
   delete config.capabilities
 
-  var browsers = require('browserslist-saucelabs')({
-    browsers: ['>1%', 'Last 2 Versions', 'IE >= 8']
-  })
+  var sauceBrowsers = require('browserslist-saucelabs')
+  var browsers = sauceBrowsers({browsers: ['> 1%']})
+    .concat(sauceBrowsers({browsers: ['last 2 versions']}))
+    .concat(sauceBrowsers({browsers: ['ie >= 8']}))
 
   for (var i = 0; i < browsers.length; ++i) {
     browsers[i]['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER
@@ -45,9 +49,9 @@ if (process.env.TRAVIS) {
     // delete browsers[i].deviceName
     // delete browsers[i].platform
 
-    browsers[i].browserName = browsers[i].browserName.toLowerCase()
+    // browsers[i].browserName = browsers[i].browserName.toLowerCase()
 
-    browsers[i].name = browsers[i].browserName.toLowerCase() + '-tests'
+    browsers[i].name = browsers[i].browserName.toLowerCase() + '-' + browsers[i].version + '-tests'
   }
 
   console.log(browsers)
