@@ -55,9 +55,9 @@ if (process.env.TRAVIS) {
     var deny = [
     ]
     if (deny.indexOf(browser.name) > -1) {
-      return true
-    } else {
       return false
+    } else {
+      return true
     }
   })
 
