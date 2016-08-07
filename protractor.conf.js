@@ -26,9 +26,6 @@ var config = {
 }
 
 if (process.env.TRAVIS) {
-  var HttpsProxyAgent = require('https-proxy-agent')
-  config.sauceAgent = new HttpsProxyAgent('http://localhost:9966')
-
   config.sauceUser = process.env.SAUCE_USERNAME
   config.sauceKey = process.env.SAUCE_ACCESS_KEY
 

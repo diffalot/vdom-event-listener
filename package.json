@@ -4,10 +4,12 @@
   "description": "a virtual-dom hook that adds eventListeners on dom nodes",
   "main": "index.js",
   "scripts": {
-    "e2e-server": "beefy test/e2e-app.js",
+    "e2e-server": "beefy ./test/e2e-app.js",
+    "e2e-server-stop": "pkill --signal SIGINT node",
+    "test-e2e": "sleep 2 && protractor",
     "selenium-server": "webdriver-manager update && webdriver-manager start",
     "lint": "standard",
-    "test": "protractor"
+    "test": "npm run lint && npm run e2e-server & npm run test-e2e && npm run e2e-server-stop"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
   },
   "homepage": "https://github.com/diffalot/vdom-event-listener#readme",
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
     "beefy": "^2.1.8",
     "core-js": "^2.4.1",
     "jasmine-spec-reporter": "^2.5.0",
@@ -38,6 +41,7 @@
     "synthetic-dom-events": "^0.3.0",
     "tape": "^4.6.0",
     "virtual-dom": "^2.1.1",
+    "watchify": "^3.7.0",
     "zuul": "^3.10.3"
   },
   "dependencies": {},
