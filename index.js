@@ -10,10 +10,18 @@ function insureHasTarget (event) {
 }
 
 var EventListener = function (handler, eventType) {
-  this.handler = function (event) {
+  this.handler = function wrapEventHandler (event) {
     handler(insureHasTarget(event))
   }
-  this.eventType = eventType || 'keydown'
+  if (!eventType) {
+    if (window.addEventListener) {
+      this.eventType = 'input'
+    } else {
+      this.eventType = 'propertychange'
+    }
+  } else {
+    this.eventType = eventType
+  }
 }
 EventListener.prototype.hook = function (node, propertyName, previousValue) {
   if (node.addEventListener) {

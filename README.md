@@ -32,7 +32,7 @@ render()
 
 `handler` is a function that takes the event that will be fired off as its only argument.
 
-`eventType` defaults to `'keydown'`, but for input types like `'checkbox'` it is better to use `'change'`.
+`eventType` defaults to `'input'` (and falls back to `'propertychange'` for ie8 support), but for input types like `'checkbox'` it is better to use `'change'`.
 
 # Browser Compatibility
 
