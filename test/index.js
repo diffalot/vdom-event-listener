@@ -1,11 +1,15 @@
 'use strict'
 
+require('core-js/fn/promise')
+require('core-js/fn/object')
+require('core-js/fn/array')
+
 var EventListener = require('../')
 var createElement = require('virtual-dom/create-element')
 var h = require('virtual-dom/h')
 
 var test = require('tape')
-var simulateEvent = require('simulate-event')
+var syntheticEvent = require('synthetic-dom-events')
 
 test('input is appended to document', function (t) {
   t.plan(1)
@@ -54,7 +58,13 @@ test('input updates', function (t) {
 
   input.value = 'testing input'
 
-  simulateEvent.simulate(input, 'input')
+  var inputEvent = syntheticEvent('keydown')
+
+  if (input.dispatchEvent) {
+    input.dispatchEvent(inputEvent)
+  } else {
+    input.fireEvent('onkeydown', inputEvent)
+  }
 
   t.equal(value, 'testing input')
 

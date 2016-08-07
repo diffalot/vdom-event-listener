@@ -3,7 +3,7 @@
 
 A virtual-dom hook that adds eventListeners on dom nodes
 
-# Usage
+# Example
 
 ```javascript
 const h = require('virtual-dom/h')
@@ -26,13 +26,13 @@ function render () {
 render()
 ```
 
-# Arguments
+# Usage
 
-new EventListener(callbackFunction, eventName)
+## `new EventListener(function handler (event), [eventType])`
 
-callbackFunction = callback(event)
+`handler` is a function that takes the event that will be fired off as its only argument.
 
-eventName = defaults to `'input'`, but for input types like `'checkbox'` it is better to use `'change'`
+`eventType` defaults to `'keydown'`, but for input types like `'checkbox'` it is better to use `'change'`.
 
 # Browser Compatibility
 
