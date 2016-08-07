@@ -7,7 +7,7 @@
     "e2e-server": "beefy test/e2e-app.js",
     "selenium-server": "webdriver-manager update && webdriver-manager start",
     "lint": "standard",
-    "test": "npm run lint && zuul -- test"
+    "test": "protractor"
   },
   "repository": {
     "type": "git",
