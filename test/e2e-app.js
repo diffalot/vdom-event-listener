@@ -24,17 +24,19 @@ function reducer (state, action) {
 
 const store = redux.createStore(reducer, {targetValue: ''})
 
-var input = ''
+var textValue = ''
 
 function inputChanged (event) {
-  input = event.target.value
+  textValue = event.target.value
+  document.getElementById('echo-output').innerHTML = textValue
 }
 
 function enterPressed (event) {
-  if (event.code === 'Enter') {
+  if (event.code === 'Enter' || event.key === 13 || event.keyCode === 13) {
+    // note that on every enter press, the render cycle builds new EventListeners
     store.dispatch({
       type: 'ENTER_PRESSED',
-      value: input
+      value: textValue
     })
   }
 }
@@ -49,7 +51,8 @@ function render (state) {
       listeningHook: new EventListener(inputChanged),
       enterHook: new EventListener(enterPressed, 'keypress')
     }),
-    h('p#test-output', state.targetValue)
+    h('p#echo-output', ''),
+    h('p#enter-output', state.targetValue)
   ])
 }
 
