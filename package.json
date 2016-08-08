@@ -4,7 +4,7 @@
   "description": "a virtual-dom hook that adds eventListeners on dom nodes",
   "main": "index.js",
   "scripts": {
-    "e2e-server": "beefy ./test/e2e-app.js -- --transform [ babelify --presets [ es2015 ] ]",
+    "e2e-server": "beefy ./test/e2e-app.js 3000 -- --transform [ babelify --presets [ es2015 ] ]",
     "e2e-server-stop": "pkill --signal SIGINT node",
     "test-e2e": "sleep 5 && wdio wdio.conf.js",
     "sauce-test": "TRAVIS=true sc-run npm test",
