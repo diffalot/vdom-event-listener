@@ -7,6 +7,7 @@
     "e2e-server": "beefy ./test/e2e-app.js",
     "e2e-server-stop": "pkill --signal SIGINT node",
     "test-e2e": "sleep 5 && protractor",
+    "sauce-capabilities": "generate-capabilities -s '> 1%, last 2 versions, ie >= 8' -o test/sauce-capabilities.json",
     "selenium-server": "webdriver-manager update && webdriver-manager start",
     "lint": "standard",
     "test": "npm run lint && npm run e2e-server & npm run test-e2e && npm run e2e-server-stop"
@@ -39,6 +40,7 @@
     "main-loop": "^3.4.0",
     "protractor": "^4.0.2",
     "redux": "^3.5.2",
+    "saucelabs-multicapabilities-generator": "0.0.1",
     "standard": "^7.1.2",
     "synthetic-dom-events": "^0.3.0",
     "tape": "^4.6.0",

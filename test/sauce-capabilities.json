@@ -1,0 +1,68 @@
+[
+  {
+    "browserName": "android",
+    "platform": "Linux",
+    "version": "4.4",
+    "name": "Android Emulator 4.4"
+  },
+  {
+    "browserName": "chrome",
+    "platform": "Mac 10.9",
+    "version": "52",
+    "name": "Google Chrome 52"
+  },
+  {
+    "browserName": "chrome",
+    "platform": "Mac 10.9",
+    "version": "51",
+    "name": "Google Chrome 51"
+  },
+  {
+    "browserName": "chrome",
+    "platform": "Mac 10.9",
+    "version": "49",
+    "name": "Google Chrome 49"
+  },
+  {
+    "browserName": "firefox",
+    "platform": "Mac 10.9",
+    "version": "47",
+    "name": "Firefox 47"
+  },
+  {
+    "browserName": "internet explorer",
+    "platform": "Windows 10",
+    "version": "11",
+    "name": "Internet Explorer 11"
+  },
+  {
+    "browserName": "internet explorer",
+    "platform": "Windows 2012",
+    "version": "10",
+    "name": "Internet Explorer 10"
+  },
+  {
+    "browserName": "internet explorer",
+    "platform": "Windows 2008",
+    "version": "9",
+    "name": "Internet Explorer 9"
+  },
+  {
+    "browserName": "internet explorer",
+    "platform": "Windows 2003",
+    "version": "8",
+    "name": "Internet Explorer 8"
+  },
+  {
+    "browserName": "iphone",
+    "platform": "Mac 10.11",
+    "version": "9.3",
+    "name": "iPhone Simulator 9.3"
+  },
+  {
+    "browserName": "safari",
+    "platform": "Mac 10.11",
+    "version": "9",
+    "name": "Safari 9"
+  }
+]

@@ -36,22 +36,12 @@ if (process.env.TRAVIS) {
 
   delete config.capabilities
 
-  var sauceBrowsers = require('browserslist-saucelabs')
-  var browsers = sauceBrowsers({browsers: ['> 1%']})
-    .concat(sauceBrowsers({browsers: ['last 2 versions']}))
-    .concat(sauceBrowsers({browsers: ['ie >= 8']}))
+  var browsers = require('./test/sauce-capabilities.json')
 
   for (var i = 0; i < browsers.length; ++i) {
     browsers[i]['tunnel-identifier'] = process.env.TRAVIS_JOB_NUMBER
     browsers[i].build = process.env.TRAVIS_BUILD_NUMBER
     browsers[i].shardTestFiles = true
-
-    // delete browsers[i].deviceName
-    // delete browsers[i].platform
-
-    // browsers[i].browserName = browsers[i].browserName.toLowerCase()
-
-    browsers[i].name = browsers[i].browserName.toLowerCase() + '-' + browsers[i].version + '-tests'
   }
 
   console.log(browsers)
