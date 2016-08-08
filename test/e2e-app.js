@@ -1,5 +1,9 @@
 'use strict'
 
+require('core-js/fn/promise')
+require('core-js/fn/object')
+require('core-js/fn/array')
+
 var redux = require('redux')
 var mainLoop = require('main-loop')
 const h = require('virtual-dom/h')
