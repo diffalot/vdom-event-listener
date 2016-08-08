@@ -223,5 +223,3 @@ if (process.env.TRAVIS) {
   exports.config.services = ['sauce']
   exports.config.capabilities = browsers
 }
-
-console.log(exports.config)
